@@ -77,14 +77,3 @@ function validatePhone() {
 
 
 
-
-function convertToValidPhoneNumber(text) {
- var result = [];
- text = text.replace(/[^\d]/g, "");
- while (text.length >= 6) {
-  result.push(text.substring(0, 3));
-  text = text.substring(3);
- }
- if (text.length > 0) result.push(text);
- return result.join("-");
-}
