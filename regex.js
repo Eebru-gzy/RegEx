@@ -41,8 +41,8 @@ re = /hello/i; //i = case insensitive
 console.log(re); // /hello/
 console.log(re.source); // hello
 
-// Regular Expression function
-// exec() - returns an array if there is a match or null if not
+// Regular Expression functions
+// exec() - returns an array of items if there is a match or null if not
 
 const result = re.exec('hello world'); //returns an array with the index of where the value of 're' which in this case 'hello' starts in the given string of the exec function, which is 0, lets say we have exec('eebru hello world'), the index would be 6. the 3 values in the array are [the expression; 'hello', its index; 0, and the input in the exec()]
 console.log(result);
@@ -52,7 +52,7 @@ console.log(result.input); //the input expression is searching from
 
 // test()  - returns true or false wheather or not there is a match
 
-const result = re.test('Hello') //retruns false because of uppercase H, we can make the case of re insensitive by add adding a flag after thr expression forward slash like this:___  re = /hello/i;
+const result = re.test('Hello') //retruns false because of uppercase H, we can make the case of re insensitive by add adding a flag after thr expression forward slash like this:  re = /hello/i;
 
 // match() - returns result array or null
 const str = 'Hello There' 
@@ -113,14 +113,19 @@ re = /^([0-9]x){3}$/;
 
 //Shorthand Character Classes
 
+re = /\w/;      // matches word character: alphanumeric and _ : just one
+re = /\w+/;     // matches word character: alphanumeric and _ one or more
+re = /\W+/;     // matches matches non alphanumerics and _
+re = /\d/;      // matches any digit : one
+re = /\d+/;     // matche more than one digits
+re = /\D+/;     // matches non-Digits
+re = /\s/;      // matches whitespace only
+re = /\S/;      // matches non-whitespace only
+re = /Hell\b/i; //Word boundary : meaning it exact word in the match, not a word that includes the word
 
-
-
-
-
-
-
-
+//Assertions
+re = /x(?=y)/;  //matches x only if followed by y
+re = /x(?!y)/;  //matches x only if NOT followed by y
 
 
 
@@ -129,7 +134,7 @@ re = /^([0-9]x){3}$/;
 
 
 // string to match
-const str = "2x2x2x2x";
+const str = "xyusnm hel";
 
 // log Result
 const result = re.exec(str);
